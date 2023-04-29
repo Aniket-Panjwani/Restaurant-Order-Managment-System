@@ -1,0 +1,114 @@
+
+<h1 class="mx-5 my-4 main-header">Aniket's Restaurant</h1>
+<div class="card mb-5 mx-5">
+<div class="container-fluid current-orders">
+  <h4 class="mb-4">Current Orders</h4>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Order ID</th>
+            <th>Items</th>
+            <th>Address</th>
+            <th>Approve/Decline</th>
+            <th>Amount</th>
+            <th>Approx Time</th>
+            <th>Done</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{ order.id }}</td>
+            <td>{{ order.items }}</td>
+            <td>{{ order.address }}</td>
+            <td>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="approve-decline-{{ order.id }}" id="approve-{{ order.id }}" value="approve" [(ngModel)]="order.status">
+                <label class="form-check-label" for="approve-{{ order.id }}">Approve</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="approve-decline-{{ order.id }}" id="decline-{{ order.id }}" value="decline" [(ngModel)]="order.status">
+                <label class="form-check-label" for="decline-{{ order.id }}">Decline</label>
+              </div>
+            </td>
+            <td>{{ order.amount }}</td>
+            <td>{{ order.approxTime }}</td>
+            <td>
+              <button type="button" class="btn btn-success" *ngIf="order.status === 'approve'" (click)="completeOrder(order)" (click)="moveToTable(order, 'approved')">Completed</button>
+              <button type="button" class="btn btn-danger" *ngIf="order.status === 'decline'" (click)="moveToTable(order, 'declined')">Decline</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="card my-5 mx-5">
+<div class="container-fluid completedOrders">
+  <h3 class="mb-4">Completed Orders</h3>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Order ID</th>
+            <th>Items</th>
+            <th>Address</th>
+            <!-- <th>Approve/Decline</th> -->
+            <th>Amount</th>
+            <th>Approx Time</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of completedOrders">
+            <td>{{ order.id }}</td>
+            <td>{{ order.items }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.amount }}</td>
+            <td>{{ order.approxTime }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="card my-5 mx-5">
+<div class="container-fluid deletedOrders">
+  <h3 class="mb-4">Declined Order</h3>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Order ID</th>
+            <th>Items</th>
+            <th>Address</th>
+            <!-- <th>Approve/Decline</th> -->
+            <th>Amount</th>
+            <th>Approx Time</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of declinedOrders">
+            <td>{{ order.id }}</td>
+            <td>{{ order.items }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.amount }}</td>
+            <td>{{ order.approxTime }}</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

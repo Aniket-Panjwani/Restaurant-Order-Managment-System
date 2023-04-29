@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Open+Sans:wght@300&family=Poppins:wght@100;200;400&family=Roboto:wght@300&family=Sofia+Sans&family=Source+Code+Pro:wght@300&family=Space+Mono:wght@400;700&display=swap");
+* {
+  font-family: "Sofia Sans", sans-serif;
+}
+.card {
+  background-color: plum;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px;
+}
+.card-style {
+  background-color: black;
+  border: 5px solid black;
+  border-radius: 10px;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  padding: 20px;
+}
+button {
+  background-color: black;
+  color: white;
+  background-color: #f535aa;
+  width: 10rem;
+  border-radius: 50px;
+}
+button:hover {
+  background-color: #f535aa;
+  color: black;
+  /* border-radius: 20px; */
+}
+
+
+.label-pass,
+.label-email {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.card-header {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #f535aa;
+}
+label {
+  color: black;
+}
+
+.main-header{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}

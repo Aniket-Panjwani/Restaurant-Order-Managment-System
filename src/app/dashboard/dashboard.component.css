@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Open+Sans:wght@300&family=Poppins:wght@100;200;400&family=Roboto:wght@300&family=Sofia+Sans&family=Source+Code+Pro:wght@300&family=Space+Mono:wght@400;700&display=swap");
+* {
+  font-family: "Sofia Sans", sans-serif;
+}
+
+.main-header{
+  display: flex;
+  justify-content: center;
+}
+
+.current-orders{
+  background-color: plum;
+}
+
+.completedOrders{
+  background-color: lightgreen;
+}
+
+.deletedOrders{
+  background-color: lightcoral;
+}
